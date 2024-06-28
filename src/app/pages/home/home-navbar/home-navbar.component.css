@@ -1,0 +1,20 @@
+.dropdown-menu{
+    display: none;
+    
+}
+
+.dropdown:hover .dropdown-menu{
+    
+    display: block;
+
+}
+
+.navbar{
+    height: 8vh;
+    z-index: 100;
+    /* position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%; */
+}

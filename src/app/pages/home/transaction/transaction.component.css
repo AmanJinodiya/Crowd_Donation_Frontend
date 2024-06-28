@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.bootstrap-wrapper{
+    background-color: #5b81ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    
+    padding: 50px;font-family: "Poppins"
+    /* display: flex; 
+    justify-content: center; 
+    align-items: center;  */
+}
+
+.container{
+    background-color: #ffff;
+    height: auto;
+    width: 40vw;
+    min-width: 320px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 20px;
+}
+/* form{
+    position: relative; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+} */
+
+.btn {
+    width: 30%; /* Set width to auto for button */
+    margin-left: auto; /* Align button to right */
+    margin-right: auto; /* Align button to left */
+    display: block; /* Make button a block element */
+    color: white;
+    background-color: #616e99;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+    
+}
+
+
+.left{
+}
+.right{
+}
+
+
+.card {
+    width: 350px;
+    height: 350px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: fixed;
+    top: 107px;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-image img {
+    width: 100%;
+    height: 250px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.bottomimg{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+}
+
+.tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.mission {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+}
+
+.title {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.card-content {
+    padding: 15px;
+    display: flex;
+}
+.dt{
+    display: flex;
+}
+.show-more{
+    position: absolute;
+    right: 190px;
+    padding: 4px 40px;
+    color: black;
+    margin-top: 10px;
+    font-weight: bold;
+    border: 1px solid gray;
+}
+
+.show-more p{
+    height: 14px;
+}
+
+.highlight{
+    color: orangered;
+}
+
+
+
+/* .details {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #777;
+}
+
+.details .stat {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.details .description {
+    display: block;
+    margin-top: 5px;
+}
+
+.details .supporters {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #aaa;
+} */
+
+.hover-content {
+    display: none;
+    margin-top: 10px;
+}
+
+.card:hover .hover-content {
+    display: block;
+}
+
+.card:hover .card-content{
+    justify-content: center;
+}
+
+.card:hover .dt {
+    display: none;
+}
+
+
+.pledge-button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pledge-button:hover {
+    background-color: #c0392b;
+}
+
+
+.donation-container {
+    width: 100%;
+    padding: 20px;
+    margin: 10px 5px;
+    background-color: rgb(250, 249, 249);;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    text-align: center;
+}
+.donation-container h2 {
+    margin-bottom: 20px;
+}
+.donation-amount {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.donation-amount div {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 230px;
+}
+.donation-amount div.selected {
+    border-color: #ff4b4b;
+    color: #ff4b4b;
+}
+.donation-amount div.popular {
+    position: relative;
+}
+.donation-amount div.popular::after {
+    content: 'Popular';
+    position: absolute;
+    top: -15px;
+    right: 50%;
+    transform: translateX(50%);
+    background-color: #ff4b4b;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+.custom-amount {
+    margin-bottom: 20px;
+}
+.custom-amount input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: left;
+}
+.indian-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.indian-checkbox input {
+    margin-right: 10px;
+}
+
+.donation-form {
+    width: 100%;
+    padding: 20px;
+    margin: 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #fff;
+  }
+  
+  .donation-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .donation-form form div {
+    margin-bottom: 15px;
+  }
+  
+  .donation-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .donation-form input[type="text"],
+  .donation-form input[type="email"],
+  .donation-form input[type="number"],
+  .donation-form input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .donation-form input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .donation-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #d9534f;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .donation-form button:hover {
+    background-color: #c9302c;
+  }
+  
+  .donation-form p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #666;
+  }
+  

@@ -1,0 +1,66 @@
+<div class="background-container">
+    <div class="container" [class.active]="containerActive" id="container">
+
+        <div class="form-container sign-up">
+
+
+
+            <form (ngSubmit)="createUser()">
+                <h1>Create Account</h1>
+
+                <div class="social-icons">
+                    <a href="#" class="icon"> <img class="ico" src="../../../assets/linkedin.png"></a>
+                    <a href="#" class="icon"> <img class="ico" src="../../../assets/google.png"></a>
+                    <a href="#" class="icon"> <img class="ico" src="../../../assets/facebook.png"></a>
+                    <a href="#" class="icon"> <img class="ico" src="../../../assets/instagram.png"></a>
+                </div>
+                <span>or use your email for registration</span>
+
+                <input type="text" name="name" placeholder="Name" [(ngModel)]="userSignup.name">
+                <input type="text" name="username" placeholder="Username" [(ngModel)]="userSignup.username">
+                <input type="email" name="email" placeholder="Email" [(ngModel)]="userSignup.email">
+                <input type="password" name="password" placeholder="Password" [(ngModel)]="userSignup.password">
+
+                <div class="policy">
+
+                    <h3>Admin</h3>
+                    <input type="checkbox" name="admin" [(ngModel)]="userSignup.admin">
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <!-- {{user | json }} -->
+            <form (ngSubmit)="userLogin()">
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"> <img class="ico" src="../../../assets/linkedin.png"></a>
+                    <a href="#" class="icon"> <img class="ico" src="../../../assets/google.png"></a>
+                    <a href="#" class="icon"> <img class="ico" src="../../../assets/facebook.png"></a>
+                    <a href="#" class="icon"> <img class="ico" src="../../../assets/instagram.png"></a>
+                </div>
+                <span>or use your email password</span>
+                <input name="username" [(ngModel)]="user.username" placeholder="Username">
+                <input name="password" [(ngModel)]="user.password" type="password" placeholder="Password">
+                <a href="#">Forget Your Password?</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all site features</p>
+                    <button class="hidden" id="login" (click)="toggleContainer()">Sign In</button>
+
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all site features</p>
+                    <button class="hidden" id="register" (click)="toggleContainer()">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

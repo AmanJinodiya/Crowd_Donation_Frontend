@@ -1,0 +1,58 @@
+<div class="sidebar">
+    <div class="sidebar-header">
+        <i class="fa fa-brackets-curly"></i>
+        <h3>Crowd Donation</h3>
+    </div>
+    <ul class="sidebar-menu">
+
+        <li [class.active]="activeLink[0]">
+            <a routerLink="/admin">
+                <img src="../../../../assets/home.png" alt="Home">
+                <span>Home</span>
+            </a>
+        </li>
+        <li [class.active]="activeLink[1]">
+            <a routerLink="/admin/showCampaign">
+                <img src="../../../../assets/megaphone.png" alt="Campaigns">
+                <span>Campaigns</span>
+            </a>
+        </li>
+        <li [class.active]="activeLink[2]">
+            <a routerLink="/admin/allDonation">
+                <img src="../../../../assets/heart.png" alt="Donations">
+                <span>Donations</span>
+            </a>
+        </li>
+        <li [class.active]="activeLink[3]">
+            <a routerLink="/admin/allUsers">
+                <img src="../../../../assets/user.png" alt="Users">
+                <span>Users</span>
+            </a>
+        </li>
+        <li [class.active]="activeLink[4]">
+            <a routerLink="/admin/profile">
+                <img src="../../../../assets/man.png" alt="Profile">
+                <span>Profile</span>
+            </a>
+        </li>
+    </ul>
+    <div class="sidebar-footer">
+
+
+        <div style="display: flex;">
+            <img src="../../../../assets/man.png" alt="" height="50px" width="50px">
+
+            <div>
+                <p style="color: black; font-weight: bold;margin: 0;">Admin</p>
+
+            </div>
+        </div>
+
+
+
+
+        <button (click)="logout()">
+            <img src="../../../../assets/logout.png" alt="Log out">
+        </button>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.bootstrap-wrapper{
+    background-color: #5b81ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}

@@ -1,0 +1,135 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.bootsrap-wrapper{
+    min-height: 100vh;
+    margin: 0;
+    width: 100%;
+    margin-left: 80px;
+}
+
+.left{
+    height: 40vh;
+}
+
+.right{
+}
+
+.dash {
+    display: flex;
+    gap: 20px;font-family: "Poppins"
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 20vw;
+    display: flex;
+}
+
+.detcard{
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 19vh;
+    width: 14vw;
+    margin: 5px;
+    display: flex;
+    transition: transform 0.8s;
+}
+
+.detcard:hover{
+    transform: scale(1.05);
+}
+
+.detcard .card-content{
+    padding: 20px;
+}
+
+.deg{
+    height: 100%;
+    
+    border-radius: 10px 0 0 10px ;
+    width: 10px;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.label {
+    font-size: 1.2rem;
+    /* color: #555555; */
+    margin: 0;
+    
+}
+
+.value {
+    font-size: 1.4rem;
+    /* color: #333333; */
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+}
+
+.graph{
+    
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 45vw;
+    }
+}
+
+@media (max-width: 585px) {
+    .card {
+        width: 90vw;
+    }
+    .label{
+        font-size: 0.8rem;
+    }
+    .value{
+        font-size: 0.9rem;
+    }
+}
+
+.vid{
+    height: 29vh;
+}
+
+
+.bytagContainer{
+    margin: 0px 10px;
+    height: 40vh;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2rem 3rem rgba(0,0,0,0.2);
+    padding: 20px;
+}
+
+.tagCard{
+    margin: auto;
+    width: 79%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.lastTransaction{
+    margin-top: 20px;
+}
+
+.moneycard{
+    display: flex;
+    justify-content: space-between;
+}

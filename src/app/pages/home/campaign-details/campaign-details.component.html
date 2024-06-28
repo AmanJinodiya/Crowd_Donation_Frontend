@@ -1,0 +1,238 @@
+<div class="bootstrap-wrapper">
+    <div class="row" style="width: 99vw;">
+        <div class="col-md-10 container" style="margin-top: 20px;">
+
+            <!-- app.component.html -->
+            <div class="container">
+
+
+                <div *ngIf="isPopupVisible" class="popup-overlay">
+                    <div class="popup-content">
+
+                        <div class="row1" style="width: 100%; display: flex; justify-content: space-between;">
+                            <div style="display: flex;">
+                                <img src="../../../../assets/tranding.png" style="width: 25px;height: 25px; ">
+                                <p>All Donor's</p>
+                            </div>
+                            <span class="close-btn" (click)="closePopup()">&times;</span>
+
+                        </div>
+                        <hr>
+
+                        <div class="row2">
+                            <p style="font-weight: bold; font-size: 22px;">{{donation.length}} Donors</p>
+                        </div>
+
+                        <div class="dono">
+
+                            <div *ngIf="donation.length == 0" class="empty">
+                                <img src="../../../../assets/animation.gif" alt="">
+                            </div>
+
+
+                            <div class="donor-card" style="margin-top: 10px;" *ngFor="let d of donation; let i = index">
+                                <img src="../../../../assets/man.png" alt="User Icon">
+                                <div class="donor-info">
+                                    <span class="donor-name">{{d.name}}</span>
+                                    <div class="donor-details">
+                                        <span class="donor-amount">${{d.amount}}</span>
+                                        <span class="dot">•</span>
+                                        <span *ngIf="i == 0" class="donor-tag top">FIRST DONOR</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center;margin-top: 20px;">
+                            <button [routerLink]="'/home/transaction/' + campaign.campaignId" class="donbutton">Donate
+                                Now</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="card" id="card">
+
+
+
+                <img class="card-img-top"
+                    src="https://plus.unsplash.com/premium_photo-1661590875743-e66ecb5f9923?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{campaign.tittle}}</h5>
+                    <p class="card-text">{{campaign.description}}</p>
+                    <div class="row">
+                        <div class="col-md-4 details">12/06/2023</div>
+                        <div class="col-md-4 details">500000</div>
+                        <div class="col-md-4 details">12/08/2024</div>
+                    </div>
+
+
+                    <div class="button_row">
+                        <button type="button" class="btn  c1_button_donate">Donate Now</button>
+
+                    </div>
+                    <div class="show-transaction">
+                        <div class="card">
+                            <div class="card-header bold">
+                                Donations
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" *ngFor="let d of donation">
+                                    <div class="li-details">
+                                        <div class="a"> {{ d.name ? d.name : 'Unknown' }}</div>
+                                        <div class="b">{{d.amount}}</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <p class="card-text mt20"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+
+
+            </div>-->
+
+
+            <div class="row header">
+                <div class="title" style="font-size: 35px; font-weight: bold;">
+                    {{campaign.tittle}}
+                </div>
+                <div>
+                    <div class="subtitle" style="font-size: 25px;">
+                        {{campaign.description}}
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="row" style="padding: 20px;">
+                <div class="col-md-8" style=" padding: 20px;">
+
+
+                    <img class="card-img-top" [src]="campaign.image" alt="Card image cap">
+
+                    <div class="donate-container">
+                        <h2 style="text-align: left; margin-top: 20px; font-size: 25px;">Donate Via</h2>
+                        <div class="donate-options">
+                            <div class="donate-option">
+                                <img src="../../../../assets/gpay.png" alt="Google Pay, Paytm and others">
+                                <p>Google Pay, Paytm and others</p>
+                            </div>
+                            <div class="donate-option">
+                                <img src="../../../../assets/card.png" alt="Credit & Debit Cards">
+                                <p>Credit & Debit Cards</p>
+                            </div>
+                            <div class="donate-option">
+                                <img src="../../../../assets/internet.png" alt="Internet Banking & Transfer">
+                                <p>Internet Banking & Transfer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="campaign-details" style="display: flex;gap: 20px; margin-top: 20px;">
+
+                        <div class="detail-card">
+                            <span>Money Raised</span>
+                            <p>&#8377;{{campaign.goal_amount}}</p>
+                        </div>
+                        <div class="detail-card">
+                            <span>Money Collected</span>
+                            <p>&#8377;{{collectedTillNow}}</p>
+                        </div>
+                        <div class="detail-card">
+                            <span>Start Date</span>
+                            <p>{{campaign.start_date}}</p>
+                        </div>
+                        <div class="detail-card">
+                            <span>End Date</span>
+                            <p>{{campaign.end_date}}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="story-container">
+                        <h2 style="text-align: left; margin-top: 30px; font-size: 35px; font-weight: bold;">Story
+                        </h2>
+                        <span>
+                            {{campaign.story}}
+                        </span>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="campaign-card">
+
+                        <button style="background-color: #e7424b; color: white;"
+                            [routerLink]="'/home/transaction/' + campaign.campaignId">Donate Now</button>
+                        <button>Share</button>
+
+                        <span style="text-align: center;display: block;
+    width: 100%;">2168 shares! Every share counts.
+
+                        </span>
+
+                        <hr>
+                        <div>
+                            <img src="../../../../assets/tranding.png" width="30px" height="30px">
+                            <span style="font-weight: bold;">{{donation.length}} Donated</span>
+                        </div>
+
+                        <div class="donor-container" style="min-height: 32vh;">
+
+                            <div *ngIf="donation.length == 0" class="empty" style="top: 70%;">
+                                <img src="../../../../assets/animation.gif" alt="">
+                            </div>
+
+                            <div *ngIf="highestDonar != null" class="donor-card">
+                                <img src="../../../../assets/man.png" alt="User Icon">
+                                <div class="donor-info">
+                                    <span class="donor-name">{{highestDonar.name}}</span>
+                                    <div class="donor-details">
+                                        <span class="donor-amount">₹{{highestDonar.amount}}</span>
+                                        <span class="dot">•</span>
+                                        <span class="donor-tag recent">Highest DONOR</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div *ngIf="secondDonar != null" class="donor-card">
+                                <img src="../../../../assets/man.png" alt="User Icon">
+                                <div class="donor-info">
+                                    <span class="donor-name">{{secondDonar.name}}</span>
+                                    <div class="donor-details">
+                                        <span class="donor-amount">₹{{secondDonar.amount}}</span>
+                                        <span class="dot">•</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="firstDonar != null" class="donor-card">
+                                <img src="../../../../assets/man.png" alt="User Icon">
+                                <div class="donor-info">
+                                    <span class="donor-name">{{firstDonar.name}}</span>
+                                    <div class="donor-details">
+                                        <span class="donor-amount">${{firstDonar.amount}}</span>
+                                        <span class="dot">•</span>
+                                        <span class="donor-tag top">FIRST DONOR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="firstDonar != null" class="donor-actions">
+                                <button (click)="openPopup()" class="btn all-donors">View All Donors</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+.container-data{
+
+    height: 80vh;
+    width: 70vw;
+    background-color: #faf9f6;
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75),
+    /* Apply white shadow */
+    -10px -10px 15px 0px rgba(255, 255, 255, 0.75);
+    padding: 20px;
+    margin: 20px auto;
+    flex: 1;  /* Allows this container to grow and fill available space */
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling */
+    scrollbar-width: none; 
+}

@@ -1,0 +1,23 @@
+<div class="container " style="padding: 30px;margin-left: 70px;">
+    <div class="row" style="margin-top: 10px;">
+        <h1>Donation's</h1>
+    </div>
+
+
+    <div class="container-data">
+        <div class="card mt20" *ngFor="let d of donations; let i = index">
+            <div class="card-body d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <img style="height: 50px;width: 50px;" src="../../../../assets/man.png" alt="Profile Picture"
+                        class="profile-pic">
+                    <div>
+                        <div style="margin-left: 10px;">{{ d.name ? d.name : 'Unknown'}}</div>
+                        <span style="margin-left: 10px; color: grey;">20/4/2024 04:24 pm</span>
+                    </div>
+                </div>
+                <span class="donation-amount" style="font-weight: bold;">${{d.amount}}</span>
+            </div>
+        </div>
+    </div>
+    <div style="height: 20px;"></div>
+</div>

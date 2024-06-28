@@ -1,0 +1,49 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <form (ngSubmit)="uploadImage()">
+            <div class="form-floating mb-3">
+                <input name="tittle" type="text" class="form-control" id="title" placeholder="Title" [(ngModel)]="campaingData.tittle">
+                <label for="title">Title</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea name="description" class="form-control" id="description" placeholder="Description" rows="4" [(ngModel)]="campaingData.description"></textarea>
+                <label for="description">Description</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input name="goal_amount" type="number" class="form-control" id="total-amount" placeholder="Total Amount" [(ngModel)]="campaingData.goal_amount">
+                <label for="total-amount">Total Amount</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input name="start_date" type="date" class="form-control" id="start-date" [(ngModel)]="campaingData.start_date">
+                <label for="start-date">Start Date</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input name="end-date" type="date" class="form-control" id="end-date" [(ngModel)]="campaingData.end_date">
+                <label for="end-date">End Date</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input name="image" type="file" class="form-control" id="image" (change)="onFileSelected($event)">
+                <label for="image">Select Image</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea name="story" class="form-control" id="story" placeholder="story.." rows="5" [(ngModel)]="campaingData.story"></textarea>
+                <label for="story">Story</label>
+            </div>
+            <div class="form-floating mb-3">
+                <select name="category" class="form-select" id="category" [(ngModel)]="campaingData.tag">
+                    <option value="medical">Medical</option>
+                    <option value="food">Food</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="clothes">Education</option>
+                    <option value="clothes">Others</option>
+                </select>
+                <label for="category">Category</label>
+            </div>
+            <div class="form-check mb-3">
+                <input name="active" class="form-check-input" type="checkbox" id="active" checked [(ngModel)]="campaingData.active_status">
+                <label class="form-check-label" for="active">Active</label>
+            </div>
+            <button type="submit" class="btn ">Submit</button>
+        </form>
+    </div>
+</div>

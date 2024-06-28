@@ -1,0 +1,255 @@
+<div class="bootsrap-wrapper p10">
+
+
+    <div class="row" style="margin-top: 10px;">
+        <div class="titl" style="font-weight: bold; font-size: 30px;">
+            Welcome Admin
+        </div>
+        <div (click)="temp()">
+            Everything running smoothly, 5 new campaigns just added.
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-8 left">
+
+
+            <div class="row" style="margin-top: 10px;">
+
+
+                <div>
+                    <div class="row1" style="display: flex;justify-content: space-around; margin: 40px 14px;">
+                        <div class="detcard"
+                            style="background: linear-gradient(#ff796f,#bd261b); color: white; box-shadow: 0 2rem 3rem rgba(255,67,54,0.2);">
+                            <div class="deg"></div>
+                            <div class="card-content" style="color: white;">
+                                <p class="label">EARNINGS (MONTHLY)</p>
+                                <p #numElement class="value">${{highestMonthly}}</p>
+                                <div class="icon calendar"></div>
+                            </div>
+
+
+                        </div>
+                        <div class="detcard"
+                            style="background: linear-gradient(#7f8191,#27282f);color: white;margin-left: 2px;box-shadow: 0 2rem 3rem rgba(0,0,0,0.2);">
+                            <div class="deg"></div>
+                            <div class="card-content">
+                                <p class="label">EARNINGS (ANNUAL)</p>
+                                <p #numElement1 class="value">${{totaldonation}}</p>
+                                <div class="icon dollar"></div>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="detcard" class="detcard"
+                            style="background: linear-gradient(#5d70ff,#5719c2); color: white;box-shadow: 0 2rem 3rem rgba(71,7,234,0.2);">
+                            <div class="deg"></div>
+                            <div class="card-content">
+                                <p class="label">Total Campaign's</p>
+                                <p #numElement2 class="value">{{totalCampaign}}</p>
+                                <div class="icon calendar"></div>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="detcard" class="detcard"
+                            style="background: linear-gradient(#F3797E,#833d36); color: white;margin-left: 3px;box-shadow: 0 2rem 3rem rgba(255,67,54,0.2);">
+                            <div class="deg"></div>
+                            <div class="card-content">
+                                <p class="label">Active Campaign's</p>
+                                <p #numElement3 class="value">{{activeCampaign}}</p>
+                                <div class="icon dollar"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="border-radius: 20px;background-color: white;width: 100%;height: 45vh;box-shadow: 0 2rem 3rem rgba(0,0,0,0.2);">
+                <canvasjs-chart [options]="chartOptions"
+                    [styles]="{width: '80%', height: '100%',margin:'auto',}"></canvasjs-chart>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="col-md-4 right">
+
+
+
+            <div class="bytagContainer">
+
+
+                <div class="header" style="display: flex; justify-content:space-between; margin-bottom: 8px;">
+                    <div class="title" style="font-weight: bold;">
+                        Campaign's by Tag
+                    </div>
+
+
+                    <div routerLink="/admin/showCampaign" style="cursor: pointer;">more ></div>
+                </div>
+
+
+
+
+                <hr>
+
+
+                <div class="content" style="width: 100%; margin-top: 20px; ">
+                    <div class="tagCard">
+
+
+                        <div style="display: flex;">
+                            <img src="../../../../assets/hospital.png" alt width="20px" height="20px">
+
+
+                            <span style="margin-left: 20px; font-weight: bold;">Medical</span>
+                        </div>
+                        <div>{{tagarray[0]}}</div>
+
+
+                    </div>
+                    <div class="tagCard">
+
+
+                        <div style="display: flex;">
+                            <img src="../../../../assets/food.png" alt width="20px" height="20px">
+
+
+                            <span style="margin-left: 20px; font-weight: bold;">food</span>
+                        </div>
+                        <div>{{tagarray[1]}}</div>
+
+
+                    </div>
+                    <div class="tagCard">
+
+
+                        <div style="display: flex;">
+                            <img src="../../../../assets/cloth.png" alt width="20px" height="20px">
+
+
+                            <span style="margin-left: 20px; font-weight: bold;">Clothes</span>
+                        </div>
+                        <div>{{tagarray[2]}}</div>
+
+
+                    </div>
+                    <div class="tagCard">
+
+
+                        <div style="display: flex;">
+                            <img src="../../../../assets/hospital.png" alt width="20px" height="20px">
+
+
+                            <span style="margin-left: 20px; font-weight: bold;">Education</span>
+                        </div>
+                        <div>{{tagarray[3]}}</div>
+
+
+                    </div>
+                    <div class="tagCard">
+
+
+                        <div style="display: flex;">
+                            <img src="../../../../assets/hospital.png" alt width="20px" height="20px">
+
+
+                            <span style="margin-left: 20px; font-weight: bold;">Others</span>
+                        </div>
+                        <div>{{tagarray[4]}}</div>
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="lastTransaction">
+
+
+
+                <div class="header" style="display: flex; justify-content:space-between; margin-bottom: 8px;">
+                    <div class="title" style="font-weight: bold;">
+                        Last Transaction
+                    </div>
+
+
+                    <div routerLink="/admin/allDonation" style="cursor: pointer;">more ></div>
+                </div>
+
+
+                <div class="content" style="padding: 20px;    width: 80%;
+    margin-left: 26px;">
+
+
+
+                    <div *ngFor="let c of donations; let i = index">
+                        <div class="moneycard">
+
+
+                            <div style="display: flex;">
+                                <img src="../../../../assets/money.png" alt width="20px" height="20px">
+
+
+                                <span style="margin-left: 20px; font-weight: bold;">{{c.name}}</span>
+                            </div>
+
+
+                            <div>
+                                <div style="font-size: 12px;">15-06-2202</div>
+                                <div style="font-size: 12px;margin-top: 0px;">12:06</div>
+                            </div>
+
+
+                            <div style="font-weight: bold;">₹{{c.amount}}</div>
+
+
+
+
+
+                        </div>
+
+                        <hr>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- <div class="row p10" style="margin-top: 10px;">
+        <div class="te col-md-6">
+            <canvasjs-chart [options]="chartOptions" [styles]="{width: '40vw', height: '50vh'}"></canvasjs-chart>
+        </div>
+        <div class="te col-md-6" style="display: flex;justify-content: center; padding-left: 140px;">
+            <canvasjs-chart [options]="chartOptions1" [styles]="{width: '20vw', height: '50vh'}"></canvasjs-chart>
+        </div>
+    </div> -->
+
+
+</div>

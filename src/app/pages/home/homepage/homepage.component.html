@@ -1,0 +1,369 @@
+<nav class="navbar  sticky-top navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">Crowd Donation</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page">Donation</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Campaigns
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li><a class="dropdown-item" href="/login">All Campaigns</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/login">My Campaign's</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/home/myCampaign">My Campaign's</a></li>
+                        <li><a class="dropdown-item" href="/login">My Donation's</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/login">About</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <li class="d-flex">
+
+                <button type="button" (click)="login()" class="btn btn-primary">Log In</button>
+            </li>
+        </div>
+    </div>
+</nav>
+<div class="bootstrap-wrapper">
+
+    <div class="background-part">
+
+        <div class="outer">
+            <div class="details">
+                <h1> Charity Springs from a <br> tender Heart.</h1>
+
+                <h2>
+                    <span> The Heart, the world's largest global crowdfunding community, <br> links nonprofits, donors,
+                        and
+                        compaines
+                        across every nation.</span>
+
+                </h2>
+                <button type="button" (click)="login()" class="btn  c1_button">Donate Now!</button>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class=" firstPart">
+
+
+
+        <div class="container1">
+
+            <div class="c1-box">
+
+
+
+                <div class="c1_data">
+
+
+
+                    <video #videoPlayer controls width="500" height="300px" autoplay muted loop>
+                        <source src="../../../../assets/dpm.mp4" type="video/mp4">
+                        <p>Sorry, Your Browser Doesn't Support Embedded Videos. Here's the <a
+                                href="https://www.youtube.com/watch?v=CiFoHm7HD94">Link to the video</a></p>
+                    </video>
+
+                </div>
+
+                <div class="c1-data2">
+                    <div class="speech-bubblef">
+                        <img src="../../../../assets/about.png" height="50px" style="margin-left: 10px;">
+                    </div>
+                    <div class="title">
+                        Crowd Donation Foundation for Help<br> Childeren.
+                    </div>
+                    <div class="desc">
+                        Crowd Donation Foundation is on a relentless mission to transform lives, with a <br /> special
+                        focus
+                        on
+                        empowering children. As a non-governmental organization,<br /> our commitment to humanity knows
+                        no
+                        bounds.
+                        We believe in leaving no <br /> stone unturned in our pursuit to uplift the underprivileged,
+                        protect
+                        animal <br />
+                        welfare, and preserve our environment. Through bold and innovative <br /> initiatives, we are
+                        determined to
+                        create a lasting impact that reverberates <br /> across generations. Join us in our journey to
+                        make
+                        a
+                        difference that truly <br /> matters.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="donation-container">
+
+            <div class="dc_title">
+                Donate now!
+            </div>
+            <p class="dc_desc">
+                By making a donation, you can contribute to our mission of establishing effective and long-lasting
+                support systems.
+            </p>
+
+            <div class="btn-group text-center" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio1">Monthly</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio2">One time</label>
+
+            </div>
+
+            <div class="common_amount" style="display: flex; width: 100%; justify-content: center;margin: 5px;">
+                <button class="ca_button" (click)="donateAmountupdate(500)"> &#8377;500</button>
+                <button class="ca_button" (click)="donateAmountupdate(1000)"> &#8377;1000</button>
+                <button class="ca_button" (click)="donateAmountupdate(1500)"> &#8377;1500</button>
+            </div>
+
+            <span style="font-size: 0.8em;">Amount</span>
+
+            <input type="number" name="amount" id="amount" value="{{donateamount}}" autocomplete="off">
+
+            <button class="donate_now_button">Donate Now</button>
+
+        </div>
+
+
+        <div class="container2">
+
+            <div class="c2_data">
+                <div class="item1">
+                    <div class="deg">
+                        <img class="ico" src="../../../assets/total.png" style="margin-right: 15px;">
+                        <span #numElement class="c2_i1_title">
+                            {{totaldonation}}
+                        </span>
+                        <span style="color: white;  font-size: 1.5em;">+</span>
+                    </div>
+
+                    <div class="c2_i1_desc">
+                        Total Donation recived
+                    </div>
+                </div>
+                <div class="item1">
+
+                    <div class="deg">
+                        <img class="ico" src="../../../assets/high.png" style="margin-right: 15px;">
+                        <span style="color: white; font-size: 1.5em;">₹</span>
+                        <span #numElement1 class="c2_i1_title">
+                            {{highestMonthly}}
+                        </span>
+                    </div>
+                    <div class="c2_i1_desc">
+                        Hightest Money Donated
+                    </div>
+                </div>
+                <div class="item1">
+                    <div class="deg">
+                        <img class="ico" src="../../../assets/campaign.png" style="margin-right: 15px;">
+                        <span #numElement2 class="c2_i1_title">
+                            {{totalCampaign}}
+                        </span>
+                        <span style="color: white;  font-size: 1.5em;">+</span>
+                    </div>
+
+                    <div class="c2_i1_desc">
+                        Total Campaigns
+                    </div>
+                </div>
+                <div class="item1">
+                    <div class="deg">
+                        <img class="ico" src="../../../assets/working.png" style="margin-right: 15px;">
+                        <span #numElement3 class="c2_i1_title">
+                            {{activeCampaign}}
+                        </span>
+                        <span style="color: white;  font-size: 1.5em;">+</span>
+                    </div>
+
+                    <div class="c2_i1_desc">
+                        Active Campaigns
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row scrolling-container">
+        <div class="scrolling-wrapper">
+            <div class="scrolling-text">
+                ★ Aakash. S Sandeep just donated <span class="highlight">₹50</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                ★ Jai Kumar Batra just donated <span class="highlight">₹1,400</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                ★ Susmita Dey Dhar just donated <span class="highlight">₹300</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="scrolling-text">
+                ★ Aakash. S Sandeep just donated <span class="highlight">₹50</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                ★ Jai Kumar Batra just donated <span class="highlight">₹1,400</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                ★ Susmita Dey Dhar just donated <span class="highlight">₹300</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+
+
+    <div class="second-part">
+
+
+        <div class="row campaigns">
+            <div class="col-md-4" *ngFor="let c of campaigns; let i = index">
+                <div class="card" (click)="login()">
+                    <div class="card-image">
+                        <img src={{c.image}}>
+                        <div class="tag">Tax Benefits Available</div>
+                        <div class="bottomimg">
+                            <h3 class="mission">Mission</h3>
+                            <h2 class="title">No Child Orphaned</h2>
+                        </div>
+                    </div>
+                    <div class="card-content">
+
+                        <div class="dt">
+                            <div class="cbar" style="display: flex;align-items: center;">
+                                <img src="../../../../assets/money-bag.png" style="height: 40px;width: 40px;">
+                            </div>
+                            <div class="right" style="margin-left: 9px;">
+                                <div class="cdata" style="display: flex;justify-content: center;">
+                                    <div class="r1 num-col" style="color: orangered; ">
+                                        2278
+                                    </div>
+                                    <p class="r1"> &nbsp;supported,125 left</p>
+                                </div>
+                                <div style="display: flex;">
+                                    <img src="../../../../assets/user.png" style="height: 20px;width: 20px;">
+                                    <span class="r11" style="margin-top: 0px;"> 1597 supporters</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="hover-content">
+                            <button class="pledge-button">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row show-more" (click)="login()">
+            <p>show more</p>
+        </div>
+
+
+
+
+        <!-- scrolling-text.component.html -->
+
+
+
+
+
+        <!-- <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyRWomTJ42NvYIrzNlSQcamp7Vvpsw70HAbw&s"
+                alt="Project Management" class="card-image">
+            <div class="card-content">
+                <p class="card-category">Business</p>
+                <h2 class="card-title">How to Improve Your Project Management Skills</h2>
+                <div class="card-footer">
+                    <span class="card-date">7 Feb 2023</span>
+                    <span class="card-comments">55</span>
+                </div>
+            </div>
+        </div> -->
+
+
+
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <ul>
+                <li><a href="#">About Give</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Fundraiser Support</h3>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Reach out</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Start a Fundraiser for</h3>
+            <ul>
+                <li><a href="#">NGO</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Donate to</h3>
+            <ul>
+                <li><a href="#">Social Causes</a></li>
+                <li><a href="#">NGOs</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-disclaimer">
+        <p><strong>Disclaimer</strong></p>
+        <p>Use of children’s information including images, videos, testimonials, etc. in the Campaign is necessary for
+            creating awareness about the charitable cause in order to bring traction to the said charitable cause and
+            obtain donations which can then be used for charitable activities. Information is used and processed with
+            valid consent. This statement is issued in compliance with the Consumer Protection Act, 2019, as amended
+            from time to time.</p>
+    </div>
+    <div class="footer-bottom">
+        <div class="currency-selector">
+
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="../../../../assets/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="../../../../assets/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="../../../../assets/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="../../../../assets/linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="../../../../assets/youtube.png" alt="YouTube"></a>
+        </div>
+    </div>
+    <div class="footer-legal">
+        <p>© Give</p>
+        <a href="#">Terms</a>
+        <a href="#">Privacy Policy</a>
+    </div>
+</footer>

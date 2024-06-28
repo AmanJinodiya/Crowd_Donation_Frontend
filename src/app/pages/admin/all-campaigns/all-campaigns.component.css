@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.bootstrap-wrapper{
+    background-color: #5b81ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    padding: 30px;
+    position: relative;font-family: "Poppins";
+    min-height: 100vh;
+    margin: 0;
+    width: 80vw;
+    margin-left: 50px;
+}
+
+.container{
+    padding: 20px;
+}
+
+.approved {
+    box-shadow: 0 8px 16px rgba(0, 128, 0, 0.4), 0 16px 32px rgba(0, 128, 0, 0.3); /* Reduced green shadow */
+  }
+  
+  .not-approved {
+    box-shadow: 0 8px 16px rgba(255, 0, 0, 0.2), 0 16px 32px rgba(255, 0, 0, 0.05);
+ /* Reduced red shadow */
+  }
+
+  .detail p {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 0;
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+}
+/* 
+.card{
+    padding: 20px;
+    
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+.card-title{
+
+    font-size: 1.5em;
+    font-weight: bold;
+
+}
+
+
+.c1_button{
+    margin: 25px 5px;
+    padding: 7px 15px;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    background-color: #616e99;
+
+}
+.c1_button_donate{
+    margin: 25px 5px;
+    padding: 7px 15px;
+    border-radius: 6px;
+    color: black;
+    border: none;
+    background-color: rgb(220 220 80)
+
+}
+
+container{
+    padding: auto;
+    width: 80%;
+} */
+/* 
+.card{
+    padding: 20px;
+    
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+.card-title{
+
+    font-size: 1.5em;
+    font-weight: bold;
+
+} */
+
+
+.c1_button{
+    margin: 25px 5px;
+    padding: 7px 15px;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    background-color: #616e99;
+
+}
+.c1_button_donate{
+    margin: 25px 5px;
+    padding: 7px 15px;
+    border-radius: 6px;
+    color: black;
+    border: none;
+    background-color: rgb(220 220 80)
+
+}
+.bg{
+    overflow: hidden;
+}
+
+.bg video{
+    position: absolute;
+   top: 0;
+   bottom: 0;
+   z-index: 1;
+   width: 99vw;
+   height: 92vh;
+   
+   object-fit: cover;
+}
+
+.bg-data{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+}
+.bg-data h1{
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+}
+
+.bg-data span{
+    color: white;
+    font-size: 1.8em;
+}
+
+
+
+.card {
+    width: 350px;
+    height: 425px;
+    background: #fff;
+    border-radius: 15px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    margin: 15px 15px;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-image img {
+    width: 100%;
+    height: 250px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.bottomimg{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+}
+
+.tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.mission {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+}
+
+.title {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.card-content {
+    padding: 0 15px;
+    /* display: flex; */
+}
+.dt{
+    display: flex;
+}
+.show-more{
+    position: absolute;
+    right: 190px;
+    padding: 4px 40px;
+    color: black;
+    margin-top: 10px;
+    font-weight: bold;
+    border: 1px solid gray;
+}
+
+.show-more p{
+    height: 14px;
+}
+/* scrolling-text.component.css */
+
+.scrolling-container {
+    width: 98vw;
+    overflow: hidden;
+    margin: 47px auto;
+    background: #f8f1f1;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0;
+    position: relative;
+}
+
+.scrolling-wrapper {
+    display: flex;
+    width: 200%; /* Double the width for continuous scrolling */
+    animation: scrollText 20s linear infinite;
+}
+
+.scrolling-text {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Verdana;
+    color: black;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.highlight{
+    color: orangered;
+}
+
+
+
+.hover-content {
+    display: none;
+    margin-top: 10px;
+}
+
+.card:hover .hover-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* 
+.card:hover .hover-content {
+    display: block;
+} */
+
+.card:hover .card-content{
+    justify-content: center;
+}
+
+.card:hover .dt {
+    display: none;
+}
+
+
+.pledge-button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pledge-button:hover {
+    background-color: #c0392b;
+}
+
+.r1{
+    margin: 0;
+}

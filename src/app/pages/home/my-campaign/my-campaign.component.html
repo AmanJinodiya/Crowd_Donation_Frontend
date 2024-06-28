@@ -1,0 +1,73 @@
+<div class="bootstrap-wrapper">
+    <div class=" first" style="width: 100%; display: flex;justify-content: end;">
+
+
+
+        <div class="dropdown" style="margin: 15px 40px;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" (click)="onFilterChange(null)">All</a>
+                <a class="dropdown-item" (click)="onFilterChange(true)">Approved</a>
+                <a class="dropdown-item" (click)="onFilterChange(false)">Pending</a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <div class="container" style="margin-top: 40px;">
+        <div class="row">
+            <div class="col-md-4 mt20" *ngFor="let c of filteredCampaigns; let i = index">
+
+                <div class="card" [routerLink]="'/home/campaignDetail/' + c.campaignId">
+                    <div class="card-image">
+                        <img [src]="c.image" alt="No Image">
+                        <div class="tag">Tax Benefits Available</div>
+
+                    </div>
+                    <div class="card-content">
+
+                        <div class="detail">
+                            <p style="font-size: 25px;font-weight: bold;margin-bottom: 0;">{{c.tittle}}</p>
+                            <span style="font-size: 15px; color: grey;">{{c.description}}.</span>
+                        </div>
+                        <hr>
+                        <div class="dt">
+
+
+
+                            <div class="cbar" style="display: flex;align-items: center;">
+                                <img src="../../../../assets/money-bag.png" style="height: 40px;width: 40px;">
+                            </div>
+                            <div class="right"
+                                style="margin-left: 9px;width: 240px; display: flex; justify-content: space-between; ">
+                                <div class="cdata">
+                                    <!-- <div class="r1 num-col" style="color: orangered; ">
+                                        2278
+                                    </div>
+                                    <p class="r1"> &nbsp;supported,125 left</p> -->
+                                    <p class="r1" style="color: gray;"> raised </p>
+                                    <p class="r1" style="color: black; font-weight: bold;">₹ {{c.goal_amount}} </p>
+                                </div>
+                                <div>
+                                    <p style="margin: 0; color: gray;">Created By</p>
+                                    <span style="font-weight: bold;">Yashbant Khare</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="hover-content">
+                            <button class="pledge-button" [routerLink]="'/home/transaction/' + c.campaignId">Donate
+                                Now</button>
+                            <button class="pledge-button" style="margin-left: 5px;">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
